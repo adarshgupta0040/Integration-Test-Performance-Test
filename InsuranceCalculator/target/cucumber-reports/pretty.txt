@@ -1,0 +1,16 @@
+
+Scenario: Calculate premium for car with Basic insurance # insurance.feature:3
+  Given Execute Calculator Business                      # com.nagarro.InsuranceCalculator.AppTest.execute_InsuranceCalculator_Business()
+  When I enter the car model "ModelX"                    # com.nagarro.InsuranceCalculator.AppTest.i_enter_the_car_model(java.lang.String)
+  And the car type "SUV"                                 # com.nagarro.InsuranceCalculator.AppTest.the_car_type(java.lang.String)
+  And the car price 20000.0                              # com.nagarro.InsuranceCalculator.AppTest.the_car_price(double)
+  And the insurance type "Basic"                         # com.nagarro.InsuranceCalculator.AppTest.the_insurance_type(java.lang.String)
+  Then we should get the actual premium 2000.0           # com.nagarro.InsuranceCalculator.AppTest.we_should_get_the_actual_premium(double)
+
+Scenario: Calculate premium for a car with Premium insurance # insurance.feature:11
+  Given Execute Calculator Business                          # com.nagarro.InsuranceCalculator.AppTest.execute_InsuranceCalculator_Business()
+  When I enter the car model "ModelY"                        # com.nagarro.InsuranceCalculator.AppTest.i_enter_the_car_model(java.lang.String)
+  And the car type "SUV"                                     # com.nagarro.InsuranceCalculator.AppTest.the_car_type(java.lang.String)
+  And the car price 30000.0                                  # com.nagarro.InsuranceCalculator.AppTest.the_car_price(double)
+  And the insurance type "Premium"                           # com.nagarro.InsuranceCalculator.AppTest.the_insurance_type(java.lang.String)
+  Then we should get the actual premium 3600.0               # com.nagarro.InsuranceCalculator.AppTest.we_should_get_the_actual_premium(double)
